@@ -35,11 +35,13 @@ public:
     }
 
     void translate(double dx, double dy) {
-        // ADD YOUR CODE HERE
+        x = x + dx;
+        y = y + dy;
     }
 
     void scale(double sx, double sy) {
-        // ADD YOUR CODE HERE
+        x = x * sx;
+        y = y * sy;
     }
 
     void print() {
@@ -51,12 +53,15 @@ int main() {
     Point p1(5, 2);
     Point p2(1, 0);
 
-    p1.print();
 
     p2.print();
     p2.rotate(45.0);
     p2.print();
 
-    // ADD CODE TO TEST TRANSLATE AND SCALE
+    p1.print();
+    p1.translate(2, -3);
+    p1.print();
+    p1.scale(2, 3);
+    p1.print();
     return 0;
 }
