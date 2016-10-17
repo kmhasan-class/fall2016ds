@@ -104,9 +104,15 @@ double calculateTriangleArea(double x[], double y[]) {
 }
 
 double calculatePolygonArea(Point p[], int numberOfPoints) {
-    // GOOGLE UP THE FORMULA TO CALCULATE AREA
-    // IMPLEMENT IT HERE
-    return 0.0;
+    double sum = 0;
+    for (int i = 0; i < n; i++) {
+        double value;
+        if (i + 1 == n)
+            value = p[n-1].getX()*p[0].getY() - p[n-1].getY()*p[0].getX();
+        else value = p[i].getX()*p[i+1].getY() - p[i].getY()*p[i+1].getX();
+        sum = sum + value;
+    }
+    return sum / 2;
 }
 
 int main() {
