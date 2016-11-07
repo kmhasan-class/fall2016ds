@@ -7,38 +7,40 @@ private:
     int array[MAXN];
     int head;
     int tail;
+    int numberOfElements;
 
 public:
     Queue() {
         head = 0;
         tail = 0;
+        numberOfElements = 0;
     }
 
     void push(int x) {
-        if (tail < MAXN) {
+        if (numberOfElements < MAXN) {
             array[tail] = x;
             tail++;
+            if (tail == MAXN)
+                tail = 0;
+            numberOfElements++;
         } else {
-            if (head == 0) {
-                cerr << "OVERFLOW" << endl;
-            } else {
-                for (int i = head; i < tail; i++) {
-                    array[i - head] = array[i];
-                }
-                tail = tail - head;
-                head = 0;
-            }
+            cerr << "OVERFLOW" << endl;
         }
     }
 
     void pop() {
-        if (!isEmpty())
+        if (!isEmpty()) {
             head++;
-        else cerr << "UNDERFLOW" << endl;
+            if (head == MAXN)
+                head = 0;
+            numberOfElements--;
+        } else {
+            cerr << "UNDERFLOW" << endl;
+        }
     }
 
     bool isEmpty() {
-        if (head == tail)
+        if (numberOfElements == 0)
             return true;
         else return false;
     }
@@ -65,10 +67,19 @@ int main() {
         q.pop();
     }
 
-    for (int i = 1; i <= 8; i++) {
+    for (int i = 1; i <= 10; i++) {
         cout << "Inserting " << i << endl;
         q.push(i);
     }
 
+    for (int i = 1; i <= 10; i++)
+        q.pop();
+
+    for (int i = 1; i <= 8; i++) {
+        cout << "Inserting " << i * 100 << endl;
+        q.push(i * 100);
+    }
+
     return 0;
 }
+
