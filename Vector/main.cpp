@@ -15,19 +15,34 @@ public:
 
 // constructor to initialize the vector with a different size
     Vector(int initialSize) {
-        // WRITE YOUR CODE HERE
+        numberOfElements = initialSize;
+        array = new int[numberOfElements];
     }
 
     void remove(int position) {
-        // WRITE YOUR CODE HERE
+        int *b = new int[--numberOfElements];
+        for (int i = 0; i < position; i++)
+            b[i] = array[i];
+        for (int i = position; i < numberOfElements; i++)
+            b[i] = array[i + 1];
+        delete array;
+        array = b;
     }
 
     void printAll() {
-        // WRITE YOUR CODE HERE
+        for (int i = 0; i < numberOfElements; i++)
+            cout << array[i] << endl;
     }
 
     void addValue(int position, int data) {
-        // WRITE YOUR CODE HERE
+        int *b = new int[++numberOfElements];
+        for (int i = 0; i < position; i++)
+            b[i] = array[i];
+        b[position] = data;
+        for (int i = position + 1; i < numberOfElements; i++)
+            b[i] = array[i - 1];
+        delete array;
+        array = b;
     }
 
     void setValue(int position, int data) {
@@ -50,6 +65,14 @@ public:
 };
 
 int main() {
-    Vector v;
+    Vector v(3);
+    v.setValue(0, 5);
+    v.setValue(1, 6);
+    v.setValue(2, 7);
+    v.setValue(3, 8);
+    v.setValue(2, 10);
+    v.addValue(2, 11);
+    v.remove(1);
+    v.printAll();
     return 0;
 }
