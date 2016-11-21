@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1479699087 source:/home/kmhasan/fall2016ds/LinkedList/main.cpp
+1479703927 source:/home/kmhasan/fall2016ds/LinkedList/main.cpp
 	<iostream>
 	<cstdlib>
 	"node.h"
-	"linkedlist.cpp"
+	"linkedlist.h"
 
 1479699084 /home/kmhasan/fall2016ds/LinkedList/node.cpp
 	<cstdlib>
@@ -13,13 +13,16 @@
 	<cstdlib>
 	"node.h"
 
-1479699122 source:/home/kmhasan/fall2016ds/LinkedList/linkedlist.cpp
+1479703802 source:/home/kmhasan/fall2016ds/LinkedList/linkedlist.cpp
 	<iostream>
-	"node.h"
+	"linkedlist.h"
 
 1479699122 /home/kmhasan/fall2016ds/LinkedList/linkedlist.cpp
 	<iostream>
 	"node.h"
 
 1479698869 /home/kmhasan/fall2016ds/LinkedList/node.h
+
+1479703809 /home/kmhasan/fall2016ds/LinkedList/linkedlist.h
+	"node.h"
 

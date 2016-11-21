@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="linkedlist.cpp" />
+		<Unit filename="linkedlist.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="node.cpp" />
 		<Unit filename="node.h" />

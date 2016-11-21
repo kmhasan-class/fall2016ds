@@ -1,34 +1,50 @@
-#ifndef __LINKED_LIST_H__
-#define __LINKED_LIST_H__
-
 #include <iostream>
-#include "node.h"
+#include "linkedlist.h"
 using namespace std;
 
-class LinkedList {
-private:
-    Node* head;
+LinkedList::LinkedList() {
+    head = NULL;
+}
 
-public:
-    LinkedList() {
-        head = NULL;
+bool LinkedList::isEmpty() {
+    if (head == NULL)
+        return true;
+    else return false;
+}
+
+void LinkedList::insertAtFront(int data) {
+    Node* x = new Node(data, head);
+    head = x;
+}
+
+void LinkedList::print() {
+    for (Node* i = head; i != NULL; i = i->getNext())
+        cout << i->getData() << endl;
+}
+
+Node* LinkedList::search(int element) {
+    for (Node* i = head; i != NULL; i = i->getNext())
+        if (i->getData() == element)
+            return i;
+    return NULL;
+}
+
+int LinkedList::removeFromFront() {
+    if (!isEmpty()) {
+        Node* temp = head;
+        int data = temp->getData();
+        head = head->getNext();
+        delete temp;
+        return data;
+    } else {
+        cerr << "Underflow" << endl;
+        return -1;
     }
+}
 
-    bool isEmpty() {
-        if (head == NULL)
-            return true;
-        else return false;
-    }
-
-    void insertAtFront(int data) {
-        Node* x = new Node(data, head);
-        head = x;
-    }
-
-    void print() {
-        for (Node* i = head; i != NULL; i = i->getNext())
-            cout << i->getData() << endl;
-    }
-};
-
-#endif
+void LinkedList::insertAfter(int data1, int data2) {
+    Node* x = search(data1);
+    Node* y = new Node(data2);
+    y->setNext(x->getNext());
+    x->setNext(y);
+}
