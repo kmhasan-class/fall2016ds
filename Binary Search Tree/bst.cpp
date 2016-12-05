@@ -46,3 +46,19 @@ void BST::inorderTreeWalk(Node* x) {
 Node* BST::getRoot() {
     return root;
 }
+
+Node* BST::treeMinimum(Node* x) {
+    // page 291
+    while (x->getLeft() != NULL)
+        x = x->getLeft();
+    return x;
+}
+
+Node* BST::treeSearch(Node* x, int k) {
+    // page 290
+    if (x == NULL || k == x->getKey())
+        return x;
+    if (k < x->getKey())
+        return treeSearch(x->getLeft(), k);
+    else return treeSearch(x->getRight(), k);
+}

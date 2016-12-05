@@ -5,11 +5,11 @@
 
 1480907383 /home/kmhasan/fall2016ds/Binary Search Tree/node.h
 
-1480910294 source:/home/kmhasan/fall2016ds/Binary Search Tree/bst.cpp
+1480913031 source:/home/kmhasan/fall2016ds/Binary Search Tree/bst.cpp
 	"bst.h"
 	<cstdlib>
 	<iostream>
 
-1480910278 /home/kmhasan/fall2016ds/Binary Search Tree/bst.h
+1480912942 /home/kmhasan/fall2016ds/Binary Search Tree/bst.h
 	"node.h"
 
