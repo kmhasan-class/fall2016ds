@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1480907854 source:/home/kmhasan/fall2016ds/Binary Search Tree/node.cpp
+	"node.h"
+	<cstdlib>
+
+1480907383 /home/kmhasan/fall2016ds/Binary Search Tree/node.h
+
+1480910294 source:/home/kmhasan/fall2016ds/Binary Search Tree/bst.cpp
+	"bst.h"
+	<cstdlib>
+	<iostream>
+
+1480910278 /home/kmhasan/fall2016ds/Binary Search Tree/bst.h
+	"node.h"
+
