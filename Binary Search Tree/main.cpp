@@ -4,6 +4,8 @@ using namespace std;
 
 int main() {
     BST tree;
+    cout << "Number of nodes " << tree.countNodes(tree.getRoot()) << endl;
+
     tree.treeInsert(54);
     tree.treeInsert(45);
     tree.treeInsert(43);
@@ -19,5 +21,7 @@ int main() {
 
     cout << "Searching for 72" << endl;
     cout << tree.treeSearch(tree.getRoot(), 72) << endl;
+
+    cout << "Number of nodes " << tree.countNodes(tree.getRoot()) << endl;
     return 0;
 }

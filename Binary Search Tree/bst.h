@@ -13,6 +13,8 @@ public:
     Node* getRoot();
     Node* treeMinimum(Node* x);
     Node* treeSearch(Node* x, int k);
+    int countNodes(Node* x);
+    // IMPLEMENT successor, transplant, delete
 };
 
 #endif

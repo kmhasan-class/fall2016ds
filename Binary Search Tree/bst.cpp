@@ -62,3 +62,15 @@ Node* BST::treeSearch(Node* x, int k) {
         return treeSearch(x->getLeft(), k);
     else return treeSearch(x->getRight(), k);
 }
+
+int BST::countNodes(Node* x) {
+    // base case
+    if (x == NULL)
+        return 0;
+
+    // recursive cases
+    int leftCount = countNodes(x->getLeft());
+    int rightCount = countNodes(x->getRight());
+    int totalCount = leftCount + rightCount + 1;
+    return totalCount;
+}
