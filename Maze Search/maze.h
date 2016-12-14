@@ -6,9 +6,12 @@ private:
     int cols;
     int startRow, startCol;
     int exitRow, exitCol;
-    char grid[100][100];
-    // change the grid to be char** grid
+    // char grid[100][100];
+    char** grid;
+    bool** isVisited;
+
 public:
+    ~Maze();
     Maze();
     Maze(int rows, int cols);
     void readMaze();
